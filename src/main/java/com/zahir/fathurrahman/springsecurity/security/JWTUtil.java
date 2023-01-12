@@ -4,7 +4,6 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.zahir.fathurrahman.springsecurity.security.model.RefreshTokenData;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
@@ -34,7 +33,6 @@ public class JWTUtil {
     }
 
     public static DecodedJWT decodedJWT(String token){
-        RefreshTokenData data = new RefreshTokenData();
         JWTVerifier verifier = JWT.require(algorithm).build();
         DecodedJWT decodedJWT = verifier.verify(token);
         return decodedJWT;
